@@ -31,5 +31,6 @@
 		"has-symbols": "^1.0.0",
 		"object-inspect": "^1.6.0",
 		"tape": "^4.9.1"
-	}
+	},
+	"dependencies": {}
 }
