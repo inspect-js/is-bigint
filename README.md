@@ -1,4 +1,4 @@
-#is-bigint <sup>[![Version Badge][2]][1]</sup>
+# is-bigint <sup>[![Version Badge][2]][1]</sup>
 
 [![Build Status][3]][4]
 [![dependency status][5]][6]
