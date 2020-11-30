@@ -9,7 +9,7 @@
 		"pretest": "npm run lint",
 		"tests-only": "nyc tape 'test/**/*.js'",
 		"test": "npm run tests-only",
-		"posttest": "npx aud --production",
+		"posttest": "aud --production",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
@@ -33,10 +33,10 @@
 	},
 	"homepage": "https://github.com/ljharb/is-bigint#readme",
 	"devDependencies": {
-		"@ljharb/eslint-config": "^17.2.0",
-		"aud": "^1.1.0",
+		"@ljharb/eslint-config": "^17.3.0",
+		"aud": "^1.1.3",
 		"auto-changelog": "^2.2.1",
-		"eslint": "^7.10.0",
+		"eslint": "^7.14.0",
 		"has-symbols": "^1.0.1",
 		"nyc": "^10.3.2",
 		"object-inspect": "^1.8.0",
