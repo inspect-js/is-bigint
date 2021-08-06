@@ -38,6 +38,7 @@
 		"aud": "^1.1.5",
 		"auto-changelog": "^2.2.1",
 		"eslint": "^7.25.0",
+		"has-bigints": "^1.0.1",
 		"has-symbols": "^1.0.2",
 		"nyc": "^10.3.2",
 		"object-inspect": "^1.10.2",

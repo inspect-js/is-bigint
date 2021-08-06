@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var inspect = require('object-inspect');
-var hasBigInts = typeof BigInt === 'function';
+var hasBigInts = require('has-bigints')();
 var hasSymbols = require('has-symbols')();
 var hasToStringTag = require('has-tostringtag/shams')();
 
