@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.3](https://github.com/inspect-js/is-bigint/compare/v1.0.2...v1.0.3) - 2021-08-06
+
+### Commits
+
+- [Tests] use `has-tostringtag` for easier checking of Symbol.toStringTag [`3b44080`](https://github.com/inspect-js/is-bigint/commit/3b440801b69689d907b33184134f00d7e8a35f9f)
+- [Dev Deps] update `auto-changelog`, `eslint`, `object-inspect`, `tape` [`e4d4a6c`](https://github.com/inspect-js/is-bigint/commit/e4d4a6c2ab743b52eda906abd1ed4b0608952533)
+- [Fix] use `has-bigints` for more robust BigInt detection [`7bb9d7a`](https://github.com/inspect-js/is-bigint/commit/7bb9d7ab42214c12ce25e9f0cfe2af769388c3bb)
+
 ## [v1.0.2](https://github.com/inspect-js/is-bigint/compare/v1.0.1...v1.0.2) - 2021-05-04
 
 ### Commits
