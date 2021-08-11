@@ -33,12 +33,14 @@
 		"url": "https://github.com/inspect-js/is-bigint/issues"
 	},
 	"homepage": "https://github.com/inspect-js/is-bigint#readme",
+	"dependencies": {
+		"has-bigints": "^1.0.1"
+	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^17.6.0",
 		"aud": "^1.1.5",
 		"auto-changelog": "^2.3.0",
 		"eslint": "^7.32.0",
-		"has-bigints": "^1.0.1",
 		"has-symbols": "^1.0.2",
 		"nyc": "^10.3.2",
 		"object-inspect": "^1.11.0",
