@@ -35,7 +35,7 @@
 	},
 	"homepage": "https://github.com/inspect-js/is-bigint#readme",
 	"dependencies": {
-		"has-bigints": "^1.0.1"
+		"has-bigints": "^1.0.2"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.0.0",
