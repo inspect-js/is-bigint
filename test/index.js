@@ -3,43 +3,27 @@
 var test = require('tape');
 var inspect = require('object-inspect');
 var hasBigInts = require('has-bigints')();
-var hasSymbols = require('has-symbols')();
 var hasToStringTag = require('has-tostringtag/shams')();
+var forEach = require('for-each');
+var v = require('es-value-fixtures');
 
 var isBigInt = require('../');
 
-var debug = function (v, m) { return inspect(v) + ' ' + m; };
-
-var forEach = function (arr, func) {
-	var i;
-	for (i = 0; i < arr.length; ++i) {
-		func(arr[i], i, arr);
-	}
-};
-
 test('non-BigInt values', function (t) {
-	var nonBigInts = [
-		true,
-		false,
+	var nonBigInts = v.nonBigInts.concat(
 		Object(true),
 		Object(false),
-		null,
-		undefined,
 		{},
 		[],
 		/a/g,
-		'string',
-		42,
 		new Date(),
 		function () {},
-		NaN
-	];
-	if (hasSymbols) {
-		nonBigInts.push(Symbol.iterator, Symbol('foo'));
-	}
+		NaN,
+		v.symbols
+	);
 	t.plan(nonBigInts.length);
 	forEach(nonBigInts, function (nonBigInt) {
-		t.equal(false, isBigInt(nonBigInt), debug(nonBigInt, 'is not a BigInt'));
+		t.equal(false, isBigInt(nonBigInt), inspect(nonBigInt) + ' is not a BigInt');
 	});
 	t.end();
 });
@@ -69,12 +53,8 @@ test('faked BigInt values', function (t) {
 });
 
 test('BigInt support', { skip: !hasBigInts }, function (t) {
-	forEach([
-		Function('return 42n')(), // eslint-disable-line no-new-func
-		BigInt(42),
-		Object(BigInt(42))
-	], function (bigInt) {
-		t.equal(true, isBigInt(bigInt), debug(bigInt, 'is a BigInt'));
+	forEach(v.bigints.concat(Object(BigInt(42))), function (bigInt) {
+		t.equal(true, isBigInt(bigInt), inspect(bigInt) + ' is a BigInt');
 	});
 
 	t.end();
