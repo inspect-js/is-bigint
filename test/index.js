@@ -10,9 +10,11 @@ var v = require('es-value-fixtures');
 var isBigInt = require('../');
 
 test('non-BigInt values', function (t) {
+	/** @type {(typeof v.primitives[number] | object)[]} */
 	var nonBigInts = v.nonBigInts.concat(
 		Object(true),
 		Object(false),
+		// @ts-expect-error TS sucks with concat
 		{},
 		[],
 		/a/g,
@@ -36,10 +38,12 @@ test('faked BigInt values', function (t) {
 	});
 
 	t.test('faked @@toStringTag', { skip: !hasBigInts || !hasToStringTag }, function (st) {
+		/** @type {{ valueOf(): unknown; [Symbol.toStringTag]?: unknown }} */
 		var fakeBigInt = { valueOf: function () { return BigInt(42); } };
 		fakeBigInt[Symbol.toStringTag] = 'BigInt';
 		st.equal(false, isBigInt(fakeBigInt), 'object with fake BigInt @@toStringTag and valueOf returning a BigInt is not a BigInt');
 
+		/** @type {{ valueOf(): unknown; [Symbol.toStringTag]?: unknown }} */
 		var notSoFakeBigInt = { valueOf: function () { return 42; } };
 		notSoFakeBigInt[Symbol.toStringTag] = 'BigInt';
 		st.equal(false, isBigInt(notSoFakeBigInt), 'object with fake BigInt @@toStringTag and valueOf not returning a BigInt is not a BigInt');
