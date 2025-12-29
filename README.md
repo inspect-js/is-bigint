@@ -40,5 +40,5 @@ Simply clone the repo, `npm install`, and run `npm test`
 [downloads-url]: https://npm-stat.com/charts.html?package=is-bigint
 [codecov-image]: https://codecov.io/gh/inspect-js/is-bigint/branch/main/graphs/badge.svg
 [codecov-url]: https://app.codecov.io/gh/inspect-js/is-bigint/
-[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/inspect-js/is-bigint
+[actions-image]: https://img.shields.io/github/check-runs/inspect-js/is-bigint/main
 [actions-url]: https://github.com/inspect-js/is-bigint/actions
