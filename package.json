@@ -36,7 +36,7 @@
 	},
 	"homepage": "https://github.com/inspect-js/is-bigint#readme",
 	"dependencies": {
-		"has-bigints": "^1.0.2"
+		"has-bigints": "^1.1.0"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "^0.18.2",
