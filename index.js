@@ -4,7 +4,7 @@ var hasBigInts = require('has-bigints')();
 
 if (hasBigInts) {
 	var bigIntValueOf = BigInt.prototype.valueOf;
-	/** @type {(value: object) => value is BigInt} */
+	/** @type {(value: unknown) => value is object & BigInt} */
 	var tryBigInt = function tryBigIntObject(value) {
 		try {
 			bigIntValueOf.call(value);
